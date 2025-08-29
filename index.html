@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechNest BD</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
@@ -16,8 +16,103 @@
     .item p { font-size: 16px; margin: 5px 0; }
     .buy-btn { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
     .buy-btn:hover { background: #1e7e34; }
+    
+    /* Reviews Section */
+    .reviews-container {
+      margin: 60px auto 30px;
+      max-width: 1000px;
+      padding: 0 15px;
+    }
+    .reviews-title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 25px;
+      color: #333;
+      position: relative;
+    }
+    .reviews-title:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: yellow;
+      margin: 10px auto;
+    }
+    .reviews-carousel {
+      position: relative;
+      overflow: hidden;
+      padding: 10px 0;
+    }
+    .reviews-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .review-slide {
+      flex: 0 0 auto;
+      width: 300px;
+      margin: 0 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+    .review-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    .carousel-controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .carousel-btn {
+      background: #000;
+      color: yellow;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .carousel-btn:hover:not(:disabled) {
+      background: #333;
+    }
+    .carousel-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
     footer { margin-top: 40px; padding: 20px; text-align: center; background: #f1f1f1; font-size: 16px; }
     footer strong { color: #d9534f; }
+    
+    /* Instructions section */
+    .instructions {
+      background: #fff8e1;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 1000px;
+      font-size: 14px;
+    }
+    .instructions h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .instructions ol {
+      padding-left: 20px;
+    }
+    .instructions li {
+      margin-bottom: 10px;
+    }
+    .instructions code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
@@ -27,21 +122,21 @@
     <div class="shop">
       <div class="item">
         <img src="https://abacasstorageaccnt.blob.core.windows.net/cirkit/e1df5a15-0265-49ca-9824-b0d17562ff1c.png" alt="ESP32 30 Pin Type-C">
-        <h2>ESP32 30 Pin Type C           </h2>
+        <h2>ESP32 30 Pin Type C</h2>
         <p>৳380</p>
         <a href="https://m.me/technestbd5v" class="buy-btn">Order Now</a>
       </div>
 
       <div class="item">
         <img src="https://www.universal-solder.ca/wp-content/uploads/2025/01/canaduino-arduino-nano-v3-ch340-USB-C-3-600x450.jpg.webp" alt="Arduino Nano type C">
-        <h2>Arduino Nano Type C          </h2>
+        <h2>Arduino Nano Type C</h2>
         <p>৳290</p>
         <a href="https://m.me/technestbd5v" class="buy-btn">Order Now</a>
       </div>
 
       <div class="item">
         <img src="https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/0/_/0.96inch-oled-module-c-1.jpg" alt="0.96 Oled Display">
-        <h2>0.96" OLED Display         </h2>
+        <h2>0.96" OLED Display</h2>
         <p>৳230</p>
         <a href="https://m.me/technestbd5v" class="buy-btn">Order Now</a>
       </div>
@@ -55,8 +150,105 @@
     </div>
   </div>
 
+  <!-- Customer Reviews Section -->
+  <div class="reviews-container">
+    <h2 class="reviews-title">Customer Reviews</h2>
+    <div class="reviews-carousel">
+      <div class="reviews-track">
+        <!-- Replace these with your GitHub image URLs -->
+        <div class="review-slide">
+          <img src="https://raw.githubusercontent.com/your-username/your-repo/main/reviews/review1.jpg" alt="Customer Review 1">
+        </div>
+        <div class="review-slide">
+          <img src="https://raw.githubusercontent.com/your-username/your-repo/main/reviews/review2.jpg" alt="Customer Review 2">
+        </div>
+        <div class="review-slide">
+          <img src="https://raw.githubusercontent.com/your-username/your-repo/main/reviews/review3.jpg" alt="Customer Review 3">
+        </div>
+        <div class="review-slide">
+          <img src="https://raw.githubusercontent.com/your-username/your-repo/main/reviews/review4.jpg" alt="Customer Review 4">
+        </div>
+        <div class="review-slide">
+          <img src="https://raw.githubusercontent.com/your-username/your-repo/main/reviews/review5.jpg" alt="Customer Review 5">
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn prev-btn" disabled>Previous</button>
+      <button class="carousel-btn next-btn">Next</button>
+    </div>
+  </div>
+
+  <!-- Instructions for adding images to GitHub -->
+  <div class="instructions">
+    <h3>How to Add Your Review Images from GitHub</h3>
+    <ol>
+      <li>Create a GitHub repository (if you don't have one already)</li>
+      <li>Create a folder named "reviews" in your repository</li>
+      <li>Upload your review screenshots to this folder</li>
+      <li>Right-click on each image in GitHub and select "Copy image address"</li>
+      <li>Replace the <code>src</code> attributes in the HTML above with your GitHub image URLs</li>
+      <li>Make sure your repository is public so the images can be accessed</li>
+    </ol>
+    <p><strong>Note:</strong> GitHub image URLs follow this pattern: <code>https://raw.githubusercontent.com/username/repository/main/folder/image.jpg</code></p>
+  </div>
+
   <footer>
     📦 Delivery All Over Bangladesh — <strong>৳60</strong> Only
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.querySelector('.reviews-track');
+      const slides = document.querySelectorAll('.review-slide');
+      const nextBtn = document.querySelector('.next-btn');
+      const prevBtn = document.querySelector('.prev-btn');
+      
+      let currentPosition = 0;
+      const slideWidth = 330; // 300px width + 30px margin
+      let visibleSlides = Math.floor(document.querySelector('.reviews-carousel').offsetWidth / slideWidth);
+      let maxPosition = -((slides.length - visibleSlides) * slideWidth);
+      
+      // Set initial position
+      updateButtonState();
+      
+      nextBtn.addEventListener('click', function() {
+        if (currentPosition > maxPosition) {
+          currentPosition -= slideWidth;
+          track.style.transform = `translateX(${currentPosition}px)`;
+          updateButtonState();
+        }
+      });
+      
+      prevBtn.addEventListener('click', function() {
+        if (currentPosition < 0) {
+          currentPosition += slideWidth;
+          track.style.transform = `translateX(${currentPosition}px)`;
+          updateButtonState();
+        }
+      });
+      
+      function updateButtonState() {
+        prevBtn.disabled = currentPosition === 0;
+        nextBtn.disabled = currentPosition <= maxPosition;
+      }
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        visibleSlides = Math.floor(document.querySelector('.reviews-carousel').offsetWidth / slideWidth);
+        maxPosition = -((slides.length - visibleSlides) * slideWidth);
+        
+        // Adjust current position if it's beyond new limits
+        if (currentPosition < maxPosition) {
+          currentPosition = maxPosition;
+        } else if (currentPosition > 0) {
+          currentPosition = 0;
+        }
+        
+        track.style.transform = `translateX(${currentPosition}px)`;
+        updateButtonState();
+      });
+    });
+  </script>
 </body>
 </html>
