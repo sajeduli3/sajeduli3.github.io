@@ -1,662 +1,650 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <link rel="icon" href="carts.png" type="image/x-icon">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechNest BD</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { background: #000000; color:  #33CC66; padding: 10px; text-align: center; font-size: 24px; font-weight: bold; }
-    .container { max-width: 1000px; margin: 30px auto; padding: 0 15px; }
-    .shop { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-    .item { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
-    .item img { width: 100%; height: 160px; object-fit: contain; border-radius: 10px; }
-    .item h2 { font-size: 18px; margin: 10px 0 5px; }
-    .item p { font-size: 16px; margin: 5px 0; }
 
-    /* Button Styles */
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .buy-btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #1877F2;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-    }
-    .buy-btn:hover { background: #1e7e34; }
-    .whatsapp-btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-    }
-    .whatsapp-btn:hover { background: #128C7E; }
+    <meta charset="UTF-8">
 
-    /* Reviews Section */
-    .reviews-container {
-      margin: 80px auto 40px;
-      max-width: 1000px;
-      padding: 0 15px;
-    }
-    .reviews-title {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 25px;
-      color: #333;
-      position: relative;
-    }
-    .reviews-title:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: green;
-      margin: 10px auto;
-    }
-    .reviews-carousel {
-      position: relative;
-      overflow: hidden;
-      padding: 10px 0;
-    }
-    .reviews-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .review-slide {
-      flex: 0 0 auto;
-      width: 300px;
-      margin: 0 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      overflow: hidden;
-      background: white;
-    }
-    .review-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-    }
-    .carousel-controls {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .carousel-btn {
-      background: #000;
-      color: yellow;
-      border: none;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-    .carousel-btn:hover:not(:disabled) {
-      background: #333;
-    }
-    .carousel-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+    <title>IoTNestBD Speed Post Shipping Label (50x75mm, rotated 90°)</title>
 
-    footer { margin-top: 40px; padding: 20px; text-align: center; background: #f1f1f1; font-size: 16px; }
-    footer strong { color: #d9534f; }
-  </style>
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: Arial, sans-serif;
+
+            -webkit-print-color-adjust: exact;
+
+            print-color-adjust: exact;
+
+        }
+
+
+
+        body {
+
+            background-color: #f0f0f0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 100vh;
+
+            padding: 20px;
+
+        }
+
+
+
+        /* 75mm x 50mm Thermal Label Container */
+
+        .label-container {
+
+            width: 75mm;
+
+            height: 50mm;
+
+            background: #ffffff;
+
+            border: 0px solid #000;
+
+            padding: 3mm;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+
+        /* Top Header Section */
+
+        .header-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            border-bottom: 2px solid #000;
+
+            padding-bottom: 1.5mm;
+
+        }
+
+
+
+        .brand-box h1 {
+
+            font-size: 15pt;
+
+            font-weight: 900;
+
+            letter-spacing: -0.5px;
+
+            color: #000;
+
+            line-height: 1;
+
+        }
+
+
+
+        .brand-box span {
+
+            font-size: 8pt;
+
+            font-weight: bold;
+
+            color: #333;
+
+        }
+
+
+
+        .speedpost-badge {
+
+            background: #000;
+
+            color: #fff;
+
+            padding: 1.5mm 3mm;
+
+            text-align: center;
+
+            border-radius: 5px;
+
+        }
+
+
+
+        .speedpost-badge h2 {
+
+            font-size: 15pt;
+
+            font-weight: 1200;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            line-height: 1;
+
+        }
+
+
+
+        .speedpost-badge span {
+
+            font-size: 2pt;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.3px;
+
+        }
+
+
+
+        /* Middle Section: Sender & Recipient */
+
+        .middle-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-grow: 1;
+
+            padding: 1.5mm 0;
+
+            gap: 2mm;
+
+        }
+
+
+
+        .column {
+
+            flex: 1;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        .column h3 {
+
+            font-size: 10pt;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            margin-bottom: 0.5mm;
+
+            border-bottom: 1px solid #000;
+
+            padding-bottom: 0.5mm;
+
+        }
+
+
+
+        .column p, .column div {
+
+            font-size: 10pt;
+
+            line-height: 1.2;
+
+            color: #000;
+
+        }
+
+
+
+        .recipient-col div {
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* Bottom Section: Category & Weight */
+
+        .footer-row {
+
+            border-top: 2px solid #000;
+
+            padding-top: 1.5mm;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1mm;
+
+        }
+
+
+
+        .footer-line {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 8pt;
+
+            font-weight: bold;
+
+        }
+
+
+
+        /* Form Controls for Editing */
+
+        .controls-container {
+
+            margin-top: 20px;
+
+            background: #fff;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+            width: 75mm;
+
+        }
+
+
+
+        .controls-container h3 {
+
+            font-size: 14px;
+
+            margin-bottom: 10px;
+
+            color: #333;
+
+        }
+
+
+
+        .form-group {
+
+            margin-bottom: 8px;
+
+        }
+
+
+
+        .form-group label {
+
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            margin-bottom: 3px;
+
+            color: #555;
+
+        }
+
+
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 6px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 4px;
+
+            font-size: 12px;
+
+        }
+
+
+
+        .print-btn {
+
+            margin-top: 10px;
+
+            width: 100%;
+
+            background: #6D5DFC;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .print-btn:hover {
+
+            background: #5849e6;
+
+        }
+
+
+
+        @media print {
+
+            body {
+
+                background: none;
+
+                padding: 0;
+
+            }
+
+            .controls-container {
+
+                display: none;
+
+            }
+
+            .label-container {
+
+                border: 0px solid #000 !important;
+
+                margin: 0;
+
+            }
+
+        }
+
+
+        /* Physical media: 50 x 75 mm. Original 75 x 50 mm artwork rotated 90°. */
+        .label-viewport {
+            width: 50mm;
+            height: 75mm;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            flex: none;
+        }
+        .label-rotated {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 75mm;
+            height: 50mm;
+            transform-origin: top left;
+            transform: translateX(50mm) rotate(90deg);
+        }
+        .label-container {
+            width: 75mm;
+            height: 50mm;
+            margin: 0;
+        }
+        .controls-container {
+            width: min(100%, 75mm);
+        }
+        @page {
+            size: 50mm 75mm;
+            margin: 0;
+        }
+        @media print {
+            html, body {
+                width: 50mm !important;
+                height: 75mm !important;
+                min-height: 0 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: block !important;
+                background: #fff !important;
+            }
+            body * {
+                visibility: hidden !important;
+            }
+            .label-viewport,
+            .label-viewport * {
+                visibility: visible !important;
+            }
+            .label-viewport {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 50mm !important;
+                height: 75mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                border: 0 !important;
+            }
+            .label-rotated {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 75mm !important;
+                height: 50mm !important;
+                transform-origin: top left !important;
+                transform: translateX(50mm) rotate(90deg) !important;
+            }
+            .label-container {
+                width: 75mm !important;
+                height: 50mm !important;
+                margin: 0 !important;
+                border: 0px solid #000 !important;
+            }
+            .controls-container {
+                display: none !important;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
-<div style="background-color: #f8d7da; color: #721c24; text-align: center; padding: 10px; font-size: 16px; font-weight: bold;">
-  We moved to <a href="https://iotnest.bd" target="_blank" style="color: #ff0000; text-decoration: underline;">IOTnest.bd</a>. To visit, click here!
-</div>
 
 
-  <header>TechNest BD </header>
 
-  <div class="container">
-    <div class="shop">
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71qiWZ3ldoL._AC_SL1500_.jpg" alt="ESP32 30 Pin Type-C">
-        <h2>ESP32 30 Pin Type C</h2>
-           <!-- Description Area -->
-      <!-- Toggleable Description with Highlights -->
-    <details class="description-toggle">
-      <summary>Product Description</summary>
-      <p>
-        The <strong>ESP32 30 Pin Type-C</strong> is a <span class="highlight">versatile microcontroller</span> with built-in
-        <span class="highlight">WiFi</span> and <span class="highlight">Bluetooth</span>. Perfect for
-        <span class="highlight">IoT</span>, <span class="highlight">robotics</span>, and
-        <span class="highlight">DIY electronics</span>.
-        It features a <strong>Type-C USB CH340 Driver interface</strong> for faster and more reliable data transfer and power delivery.
-      </p>
-      <ul>
-        <li><span class="highlight">WiFi + Bluetooth Dual Mode</span></li>
-        <li><span class="highlight">Type-C USB Interface</span></li>
-        <li>30 GPIO Pins</li>
-        <li>Supports <span class="highlight">Arduino</span> & <span class="highlight">MicroPython</span></li>
-      </ul>
-    </details>
+    <!-- The Thermal Label -->
 
-        <p><s>৳450</s> <span style="color: red;">৳400</p>
-        <div class="button-container">
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919?text=Hello!%20I%20want%20to%20order%20ESP32%2030%20Pin%20Type%20C" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
+    <div class="label-viewport">
+      <div class="label-rotated">
+    <div class="label-container" id="labelContent">
+
+        <!-- Top Header -->
+
+        <div class="header-row">
+
+            <div class="brand-box">
+
+                <h1>ioTNestBD</h1>
+
+                <span>www.iotnestbd.com</span>
+
+            </div>
+
+            <div class="speedpost-badge">
+
+                <h2>SPEED POST</h2>
+
+
+
+            </div>
+
         </div>
-      </div>
 
-      <div class="item">
-        <img src="https://www.universal-solder.ca/wp-content/uploads/2025/01/canaduino-arduino-nano-v3-ch340-USB-C-3-600x450.jpg.webp" alt="Arduino Nano type C">
-        <h2>Arduino Nano Type C</h2>
 
-        <details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>Arduino Nano Type-C</strong> is a compact and powerful development board based on the
-    <span class="highlight">ATmega328P</span> microcontroller. It now includes a
-    <strong>Type-C USB port</strong> for modern connectivity and ease of use. Perfect for
-    <span class="highlight">embedded systems</span>, <span class="highlight">prototyping</span>, and
-    <span class="highlight">IoT projects</span>.
-  </p>
-  <ul>
-    <li><span class="highlight">ATmega328P</span> Microcontroller</li>
-    <li><span class="highlight">Type-C USB Port</span></li>
-    <li>Compatible with <span class="highlight">Arduino IDE</span></li>
-    <li>Ultra-compact design</li>
-  </ul>
-</details>
-       <p><s>৳420</s> <span style="color: red;">৳300</p>
-        <div class="button-container">
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919?text=Hello!%20I%20want%20to%20order%20Arduino%20Nano%20Type%20C" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
+
+        <!-- Middle Section (Sender & Recipient) -->
+
+        <div class="middle-row">
+
+            <div class="column">
+
+                <h3>প্রেরক (SENDER):</h3>
+
+                <p><strong>IoTNestBD</strong></p>
+
+                <p>Lohagara SO,</p>
+
+                <p>Lohagara,Narail</p>
+
+                <p>01638-692919</p>
+
+            </div>
+
+            <div class="column recipient-col">
+
+                <h3>প্রাপক (RECIPIENT):</h3>
+
+                <div id="lbl-name">[প্রাপকের নাম]</div>
+
+                <div id="lbl-addr1">[ঠিকানা ও এলাকা]</div>
+
+                <div id="lbl-addr2">[শহর / জেলা, পোস্টকোড]</div>
+
+                <div id="lbl-phone">মোবাইল: [মোবাইল নম্বর]</div>
+
+            </div>
+
         </div>
-      </div>
-
-      <div class="item">
-        <img src="https://m.media-amazon.com/images/I/51AcBa0GquL._UF1000,1000_QL80_.jpg" alt="0.96 Oled Display">
-        <h2>0.96"/ 0.91" OLED </h2>
-<details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>OLED Displays</strong> (0.96" and 0.91") are compact, energy-efficient screens designed for
-    <span class="highlight">microcontroller projects</span> such as Arduino, ESP32, and Raspberry Pi.
-    Both models use <span class="highlight">I2C communication</span> and are excellent for displaying
-    <span class="highlight">text</span>, <span class="highlight">sensor data</span>, and
-    <span class="highlight">custom UIs</span>.
-  </p>
-
-  <ul>
-    <li><strong>0.96" OLED Display</strong>
-      <ul>
-        <li><span class="highlight">Resolution:</span> 128x64 pixels</li>
-        <li><span class="highlight">Interface:</span> I2C (4-pin)</li>
-        <li><span class="highlight">Color:</span> White or Blue text on Black background</li>
-        <li>Ideal for <span class="highlight">graphs</span> or <span class="highlight">multi-line text</span></li>
-      </ul>
-    </li>
-
-    <li><strong>0.91" OLED Display</strong>
-      <ul>
-        <li><span class="highlight">Resolution:</span> 128x32 pixels</li>
-        <li><span class="highlight">Interface:</span> I2C (4-pin)</li>
-        <li><span class="highlight">Slim Design</span> – perfect for compact builds</li>
-        <li>Great for <span class="highlight">minimalist UIs</span> or <span class="highlight">single-line output</span></li>
-      </ul>
-    </li>
-  </ul>
-
-  <p>
-    Both displays are fully compatible with <span class="highlight">Arduino libraries</span> like
-    <code>Adafruit_SSD1306</code> and <code>U8g2</code>. Whether you're building a
-    <span class="highlight">weather station</span>, <span class="highlight">sensor dashboard</span>, or
-    <span class="highlight">wearable project</span>, these OLEDs are a perfect choice.
-  </p>
-</details>
 
 
-        <p><s>৳450</s> <span style="color: red;">৳230</p>
-        <div class="button-container">
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919?text=Hello!%20I%20want%20to%20order%200.96%20OLED%20Display" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
+
+        <!-- Bottom Section (Category & Weight) -->
+
+        <div class="footer-row">
+
+            <div class="footer-line">
+
+                <span>Product Category: Electronics Item</span>
+
+                <span id="lbl-weight">Weight: _____ g</span>
+
+            </div>
+
         </div>
-      </div>
-      <div class="item">
-        <img src="https://cdn.store-assets.com/s/236824/i/73506998.png?width=1024&format=webp" alt="Arduino Uno R3 Smd">
-        <h2>Arduino Uno R3 SMD Type C</h2>
-        <details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>Arduino UNO Type-C SMD</strong> is a reliable development board based on the
-    <span class="highlight">ATmega328 SMD</span> chip. It offers all the features of a classic Arduino UNO,
-    but with a modern <span class="highlight">USB Type-C</span> connector and a
-    <span class="highlight">Surface-Mount Device (SMD)</span> microcontroller.
-  </p>
-  <ul>
-    <li><span class="highlight">ATmega328P SMD</span> Version</li>
-    <li><span class="highlight">Type-C USB Interface</span></li>
-    <li>Fully <span class="highlight">Arduino UNO compatible</span></li>
-    <li>Great for <span class="highlight">beginners</span> and <span class="highlight">educational use</span></li>
-  </ul>
-</details>
 
-        <p><s>৳480</s> <span style="color: Red;">৳300</p>
-                      <div class="button-container">
-  <!-- Transparent / disabled button -->
-  <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-
-          <!-- Normal button -->
-  <a href="https://wa.me/8801638692919?text=Hello! want to buy Arduino Uno" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i> Order on WhatsApp
-  </a>
-</div>
-      </div>
-       <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71n-iL-FrwL._AC_SL1500_.jpg" alt="Esp32 Expantion Board">
-        <h2>Esp32 Expantion Board & Esp32 Combo </h2>
-        <details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-   Esp32 and Esp32 30 pin Expantion Board Combo
-</details>
-
-        <p><s>৳800</s> <span style="color: Red;">৳550</p>
-                      <div class="button-container">
-  <!-- Transparent / disabled button -->
-  <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-
-          <!-- Normal button -->
-  <a href="https://wa.me/8801638692919?text=Hello! Esp32 combo" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i> Order on WhatsApp
-  </a>
-</div>
-      </div>
-      <div class="item">
-        <img src="https://www.cnx-software.com/wp-content/uploads/2024/06/WeAct-STM32WB55-cheap-development-board.jpg" alt="WeActStudio.STM32WB55CoreBoard">
-        <h2>WeActStudio STM32WB55</h2>
-    <details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>WeActStudio STM32WB55 Core Board</strong> is a powerful, compact development board based on the
-    <span class="highlight">STM32WB55 dual-core wireless microcontroller</span>. It features both
-    <span class="highlight">Arm Cortex-M4</span> and <span class="highlight">Cortex-M0+</span> cores, enabling seamless
-    <span class="highlight">Bluetooth Low Energy (BLE 5.0)</span> and real-time processing on a single chip.
-  </p>
-
-  <ul>
-    <li><span class="highlight">MCU:</span> STM32WB55CGU6 (Dual-core M4 + M0+)</li>
-    <li><span class="highlight">Wireless:</span> BLE 5.0, Thread, Zigbee support</li>
-    <li><span class="highlight">USB-C Interface</span> for programming and power</li>
-    <li><span class="highlight">Onboard Debug Interface</span> (DFU + SWD supported)</li>
-    <li>Compatible with <span class="highlight">STM32CubeIDE</span>, <span class="highlight">Arduino</span>, and <span class="highlight">PlatformIO</span></li>
-  </ul>
-
-  <p>
-    Ideal for <span class="highlight">IoT devices</span>, <span class="highlight">BLE-enabled projects</span>, and
-    <span class="highlight">low-power applications</span>. This board is a great entry point into STM32’s wireless ecosystem while
-    maintaining full flexibility with STM32 tools and libraries.
-  </p>
-</details>
-
-
-        <p><s>৳900</s> <span style="color: Red;">৳690</p>
-        <div class="button-container" style="opacity: 0.5; pointer-events: none;" >
-<a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          </div>
-
-          <!-- Normal button -->
-          <div class="button-container">
-  <a href="https://wa.me/8801638692919?text=Hello! Want to buy STM32wb55 " class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i> Inform me When Available </a>
-</div>
-      </div>
-      <div class="item">
-        <img src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/5/-/5-113991054-seeed-studio-xiao-esp32c3-feature_1.jpg" alt="Seeed Studio XIAO ESP32-C3">
-        <h2>Seeed Studio XIAO ESP32-C3</h2>
-   <!-- XIAO ESP32-C3 -->
-<details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>Seeed Studio XIAO ESP32-C3</strong> is an ultra-compact and powerful development board
-    based on the <span class="highlight">Espressif ESP32-C3</span> RISC-V single-core microcontroller.
-    It combines <span class="highlight">Wi-Fi</span> and <span class="highlight">Bluetooth 5 (LE)</span> connectivity
-    in a tiny form factor, making it perfect for <span class="highlight">IoT</span> and
-    <span class="highlight">low-power wearable devices</span>.
-  </p>
-
-  <ul>
-    <li><span class="highlight">MCU:</span> ESP32-C3 RISC-V (Single-core, 160 MHz)</li>
-    <li><span class="highlight">Wireless:</span> Wi-Fi 2.4 GHz, Bluetooth 5 (LE)</li>
-    <li><span class="highlight">Flash:</span> 4 MB</li>
-    <li><span class="highlight">USB-C Interface</span> for programming and power</li>
-    <li><span class="highlight">Low-power design</span> suitable for battery-powered projects</li>
-    <li>Compatible with <span class="highlight">Arduino</span>, <span class="highlight">ESP-IDF</span>, and <span class="highlight">PlatformIO</span></li>
-  </ul>
-
-  <p>
-    The XIAO ESP32-C3 is ideal for <span class="highlight">compact IoT projects</span>,
-    <span class="highlight">BLE applications</span>, and <span class="highlight">Wi-Fi-enabled devices</span>.
-    Its small footprint and rich ecosystem support make it a versatile choice for developers.
-  </p>
-</details>
-
-
-        <p><s>৳1100</s> <span style="color: Red;">৳950</p>
-                <div class="button-container">
-  <!-- Transparent / disabled button -->
-  <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-
-          <!-- Normal button -->
-  <a href="https://wa.me/8801638692919?text=Hello! Want to Order XIAO Esp32 C3" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i> Order on WhatsApp
-  </a>
-</div>
-      </div>
-      <div class="item">
-        <img src="https://media-cdn.seeedstudio.com/media/catalog/product/cache/bb49d3ec4ee05b6f018e93f896b8a25d/6/-/6-113991114-xiao-esp32s3-feature_1.jpg" alt="Seeed Studio XIAO ESP32-S3">
-        <h2>Seeed Studio XIAO ESP32-S3</h2>
-    <!-- XIAO ESP32-S3 -->
-<details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>Seeed Studio XIAO ESP32-S3</strong> is a tiny yet powerful development board
-    based on the <span class="highlight">Espressif ESP32-S3</span> dual-core microcontroller.
-    It supports <span class="highlight">Wi-Fi</span> and <span class="highlight">Bluetooth 5 (LE)</span>,
-    with enhanced <span class="highlight">AI acceleration</span> and <span class="highlight">USB-OTG</span> capabilities.
-  </p>
-
-  <ul>
-    <li><span class="highlight">MCU:</span> ESP32-S3 (Dual-core Xtensa LX7, up to 240 MHz)</li>
-    <li><span class="highlight">Wireless:</span> Wi-Fi 2.4 GHz, Bluetooth 5 (LE)</li>
-    <li><span class="highlight">Flash:</span> 8 MB, <span class="highlight">PSRAM:</span> 2 MB</li>
-    <li><span class="highlight">USB-C Interface</span> with native USB-OTG support</li>
-    <li><span class="highlight">AI acceleration</span> with vector instructions</li>
-    <li>Compatible with <span class="highlight">Arduino</span>, <span class="highlight">ESP-IDF</span>, <span class="highlight">MicroPython</span>, and <span class="highlight">PlatformIO</span></li>
-  </ul>
-
-  <p>
-    The XIAO ESP32-S3 is well-suited for <span class="highlight">AIoT devices</span>,
-    <span class="highlight">voice recognition projects</span>, and
-    <span class="highlight">smart applications</span>.
-    Its strong performance and small size make it perfect for both prototyping and deployment.
-  </p>
-</details>
-
-
-       <p><s>৳1330</s> <span style="color: Red;">৳1150</p>
-                      <div class="button-container">
-  <!-- Transparent / disabled button -->
-  <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-
-          <!-- Normal button -->
-  <a href="https://wa.me/8801638692919?text=Hello! Want to buy XIAO Esp32 S3" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i> Order On WhatsApp
-  </a>
-</div>
-</div>
-<div class="item">
-        <img src="https://m.media-amazon.com/images/I/71H300bsb6L._AC_SL1500_.jpg" alt="ESP32-S3 N16R8 Dual Usb">
-        <h2>ESP32-S3 N16R8 Dual Usb</h2>
-
-<details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>ESP32-S3 N16R8</strong> is a high-performance development module
-    based on the <span class="highlight">Espressif ESP32-S3</span> dual-core microcontroller.
-    It comes with <span class="highlight">16 MB Flash</span> and
-    <span class="highlight">8 MB Octal PSRAM</span>, offering powerful resources for
-    <span class="highlight">AI acceleration</span>,
-    <span class="highlight">signal processing</span>, and
-    <span class="highlight">IoT applications</span>.
-  </p>
-
-  <ul>
-    <li><span class="highlight">MCU:</span> ESP32-S3 (Dual-core Xtensa LX7, up to 240 MHz)</li>
-    <li><span class="highlight">Wireless:</span> Wi-Fi 2.4 GHz, Bluetooth 5 (LE)</li>
-    <li><span class="highlight">Flash:</span> 16 MB</li>
-    <li><span class="highlight">PSRAM:</span> 8 MB (Octal PSRAM)</li>
-    <li><span class="highlight">AI acceleration</span> with vector instructions</li>
-    <li><span class="highlight">USB-OTG</span> support (depending on dev board)</li>
-    <li>Compatible with <span class="highlight">Arduino</span>,
-        <span class="highlight">ESP-IDF</span>,
-        <span class="highlight">MicroPython</span>,
-        <span class="highlight">PlatformIO</span></li>
-  </ul>
-
-  <p>
-    The ESP32-S3 N16R8 is an excellent choice for
-    <span class="highlight">AIoT devices</span>,
-    <span class="highlight">voice recognition</span>,
-    <span class="highlight">image processing</span>, and
-    <span class="highlight">advanced embedded projects</span>.
-    Its large memory and advanced features make it perfect for both
-    <span class="highlight">prototyping</span> and <span class="highlight">deployment</span>.
-  </p>
-</details>
-
-
-
-       <p><s>৳930</s> <span style="color: Red;">৳600</p>
-                      <div class="button-container">
-  <!-- Transparent / disabled button -->
-  <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-
-          <!-- Normal button -->
-  <a href="https://wa.me/8801638692919?text=Hello! Want to buy Esp32 S3" class="whatsapp-btn">
-    <i class="fab fa-whatsapp"></i> Order On WhatsApp
-  </a>
-</div>
-</div>
-
-   </div>
-  </div>
-
-  <!-- Separator with message -->
-<div style="background-color: #f8d7da; color: #721c24; text-align: center; padding: 10px; font-size: 16px; font-weight: bold;">
-  We moved to <a href="https://iotnest.bd" target="_blank" style="color: #ff0000; text-decoration: underline;">IOTnest.bd</a>. To visit, click here!
-</div>
-
-
-  <div class="container">
-  <div class="shop">
-
-     <div class="item">
-        <img src="https://m.media-amazon.com/images/I/61H2HVrbU2L._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Rfid Module rc522">
-        <h2>RC522 RFIDModule</h2>
-        <details class="description-toggle">
-  <summary>Product Description</summary>
-  <p>
-    The <strong>RFID RC522 Module</strong> is a contactless reader/writer for
-    <span class="highlight">13.56MHz RFID tags</span> and cards. Ideal for
-    <span class="highlight">access control</span>, <span class="highlight">security</span>, and
-    <span class="highlight">attendance systems</span>. Communicates via
-    <span class="highlight">SPI interface</span>.
-  </p>
-  <ul>
-    <li><span class="highlight">13.56MHz Frequency</span></li>
-    <li><span class="highlight">SPI Communication</span></li>
-    <li>Includes RFID tag + key fob</li>
-    <li>Compatible with <span class="highlight">Arduino</span> and <span class="highlight">ESP boards</span></li>
-  </ul>
-</details>
-
-        <p><s>৳200</s> <span style="color: Red;">৳150</p>
-        <div class="button-container" >
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
-      </div>
-       <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71QPqC2iOlL._AC_SL1200_.jpg" alt="4 channel relay module">
-        <h2>4 Channel 5V Relay Module</h2>
-        <p><s>৳270</s> <span style="color: Red;">৳200</p>
-        <div class="button-container">
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
-      </div>
-      <div class="item">
-        <img src="https://electronics.semaf.at/media/image/product/500/lg/2-channels-5v-relay-module.webp" alt="2 channel Relay Module 5v">
-        <h2>2 Channel 5V Relay Module</h2>
-       <p><s>৳180</s> <span style="color: Red;">৳120</p>
-        <div class="button-container">
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
-      </div>
-      <div class="item">
-        <img src="https://electronics.semaf.at/media/image/product/635/lg/1-kanal-5v-relaismodul.jpg" alt="1 Channel 5v Relay Module">
-        <h2>1 Channel 5V Relay Module</h2>
-        <p><s>৳100</s> <span style="color: Red;">80</p>
-        <div class="button-container">
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
-      </div>
- <div class="item">
-        <img src="https://cdn.bodanius.com/media/1/2ed102979_towerpro-sg90-9g-micro-servo-motor_400x650.webp" alt="Servo Motor">
-        <h2>Servo Motor Micro SG90</h2>
-        <p><s>৳150</s> <span style="color: Red;">৳110</p>
-        <div class="button-container" >
-        <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
-      </div>
-        <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71jrB0cZUXL._AC_SL1500_.jpg" alt="Servo Motor">
-        <h2>Servo Motor Micro MG90S</h2>
-        <p><s>৳275</s> <span style="color: Red;">৳200</p>
-        <div class="button-container" style=>
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
-      </div>
-       <div class="item">
-        <img src="https://m.media-amazon.com/images/I/71DvlkHeCuL._SL1500_.jpg" alt="Jumper Wire">
-        <h2>Jumper Wire 20CM <br>F-F/M-M/M-F</h2>
-        <p><span style="color: Red;">৳2 Per Piece <br> ৳70 Full set 40 Piece</p>
-        <div class="button-container" >
-          <a href="https://m.me/technestbd5v" class="buy-btn">Order on Messenger</a>
-          <a href="https://wa.me/8801638692919" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Order on WhatsApp
-          </a>
-        </div>
+    </div>
       </div>
     </div>
-  </div>
 
-  <!-- Customer Reviews Section -->
-  <div class="reviews-container">
-    <h2 class="reviews-title">Customer Reviews</h2>
-    <div class="reviews-carousel">
-      <div class="reviews-track">
-        <!-- Replace these with your GitHub image URLs -->
-        <div class="review-slide">
-          <img src="https://raw.githubusercontent.com/sajeduli3/sajeduli3.github.io/refs/heads/main/Screenshot_20250829_215940.png" alt="Customer Review 1">
+
+
+    <!-- Live Editing Form (Hidden during print) -->
+
+    <div class="controls-container">
+
+        <h3>প্রাপকের তথ্য এডিট করুন</h3>
+
+        <div class="form-group">
+
+            <label>প্রাপকের নাম:</label>
+
+            <input type="text" id="input-name" placeholder="নাম লিখুন" value="মোা: রহিম উদ্দিন" oninput="updateLabel()">
+
         </div>
-        <div class="review-slide">
-          <img src="https://raw.githubusercontent.com/sajeduli3/sajeduli3.github.io/refs/heads/main/Screenshot_20250829_222853.png" alt="Customer Review 2">
+
+        <div class="form-group">
+
+            <label>ঠিকানা (এলাকা):</label>
+
+            <input type="text" id="input-addr1" placeholder="বাড়ি/রোড, এলাকা" value="মিরপুর-১০, ব্লক সি" oninput="updateLabel()">
+
         </div>
-        <div class="review-slide">
-          <img src="https://raw.githubusercontent.com/sajeduli3/sajeduli3.github.io/refs/heads/main/Screenshot_20250829_215905.png" alt="Customer Review 3">
+
+        <div class="form-group">
+
+            <label>শহর ও পোস্টকোড:</label>
+
+            <input type="text" id="input-addr2" placeholder="শহর, পোস্টকোড" value="ঢাকা - ১২১৬" oninput="updateLabel()">
+
         </div>
-        <div class="review-slide">
-          <img src="https://raw.githubusercontent.com/sajeduli3/sajeduli3.github.io/refs/heads/main/Screenshot_20250829_215926.png" alt="Customer Review 4">
+
+        <div class="form-group">
+
+            <label>মোবাইল নম্বর:</label>
+
+            <input type="text" id="input-phone" placeholder="মোবাইল নম্বর" value="০১৭০০০০০০০০" oninput="updateLabel()">
+
         </div>
-      </div>
+
+        <div class="form-group">
+
+            <label>ওজন (Weight):</label>
+
+            <input type="text" id="input-weight" placeholder="যেমন: ১৫০গ্রাম" value="১৫০" oninput="updateLabel()">
+
+        </div>
+
+        <button class="print-btn" onclick="window.print()">প্রিন্ট করুন (50x75mm)</button>
+
     </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn prev-btn" disabled>Previous</button>
-      <button class="carousel-btn next-btn">Next</button>
-    </div>
-  </div>
 
-  <footer>
-     Powered by <a href="https://openai.com/chatgpt" target="_blank" style="color: #007bff; text-decoration: none;">ChatGPT</a>
-</footer>
-  </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const track = document.querySelector('.reviews-track');
-      const slides = document.querySelectorAll('.review-slide');
-      const nextBtn = document.querySelector('.next-btn');
-      const prevBtn = document.querySelector('.prev-btn');
 
-      let currentPosition = 0;
-      const slideWidth = 330; // 300px width + 30px margin
-      let visibleSlides = Math.floor(document.querySelector('.reviews-carousel').offsetWidth / slideWidth);
-      let maxPosition = -((slides.length - visibleSlides) * slideWidth);
+    <script>
 
-      // Set initial position
-      updateButtonState();
+        function updateLabel() {
 
-      nextBtn.addEventListener('click', function() {
-        if (currentPosition > maxPosition) {
-          currentPosition -= slideWidth;
-          track.style.transform = `translateX(${currentPosition}px)`;
-          updateButtonState();
-        }
-      });
+            document.getElementById('lbl-name').innerText = document.getElementById('input-name').value || '[প্রাপকের নাম]';
 
-      prevBtn.addEventListener('click', function() {
-        if (currentPosition < 0) {
-          currentPosition += slideWidth;
-          track.style.transform = `translateX(${currentPosition}px)`;
-          updateButtonState();
-        }
-      });
+            document.getElementById('lbl-addr1').innerText = document.getElementById('input-addr1').value || '[ঠিকানা ও এলাকা]';
 
-      function updateButtonState() {
-        prevBtn.disabled = currentPosition === 0;
-        nextBtn.disabled = currentPosition <= maxPosition;
-      }
+            document.getElementById('lbl-addr2').innerText = document.getElementById('input-addr2').value || '[শহর / জেলা, পোস্টকোড]';
 
-      // Handle window resize
-      window.addEventListener('resize', function() {
-        visibleSlides = Math.floor(document.querySelector('.reviews-carousel').offsetWidth / slideWidth);
-        maxPosition = -((slides.length - visibleSlides) * slideWidth);
+            document.getElementById('lbl-phone').innerText = '' + (document.getElementById('input-phone').value || '[মোবাইল নম্বর]');
 
-        // Adjust current position if it's beyond new limits
-        if (currentPosition < maxPosition) {
-          currentPosition = maxPosition;
-        } else if (currentPosition > 0) {
-          currentPosition = 0;
+            document.getElementById('lbl-weight').innerText = 'Weight: ' + (document.getElementById('input-weight').value || '_____') + ' g';
+
         }
 
-        track.style.transform = `translateX(${currentPosition}px)`;
-        updateButtonState();
-      });
-    });
-  </script>
+        updateLabel();
+
+    </script>
+
+
+
 </body>
+
 </html>
